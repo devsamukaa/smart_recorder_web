@@ -19,10 +19,16 @@ function turnPageToHttps() {
 function redefinePassword() {
 
     $senha_gerada = "gotech@".random_int(100, 999);
-    $BODY_REQUEST =  "{'cd' : ".$_REQUEST["cd"].", 'id' : '".$_REQUEST["id"]."', 'password' : '".sha1($senha_gerada)."'}";
+
+    $BODY_REQUEST = array();
+    $BODY_REQUEST["cd"] = $_REQUEST["cd"];
+    $BODY_REQUEST["id"] = $_REQUEST["id"];
+    $BODY_REQUEST["password"] = sha1($senha_gerada);
+
+    // $BODY_REQUEST =  "{'cd' : ".$_REQUEST["cd"].", 'id' : '".$_REQUEST["id"]."', 'password' : '".sha1($senha_gerada)."'}";
     $URL = 'https://smartrecorder-api.herokuapp.com/pessoa/redefinir_senha';
 
-    echo $BODY_REQUEST."<br/>";
+    echo json_encode($BODY_REQUEST)."<br/>";
     echo $senha_gerada."<br/>";
     echo sha1($senha_gerada)."<br/>";
 
@@ -36,7 +42,7 @@ function redefinePassword() {
         CURLOPT_TIMEOUT => 30,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => $BODY_REQUEST,
+        CURLOPT_POSTFIELDS => json_encode($BODY_REQUEST),
         CURLOPT_HTTPHEADER => array(
         "Cache-Control: no-cache",
         "Content-Type: application/json",

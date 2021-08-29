@@ -39,7 +39,7 @@
             Olá!<br/><br/>
             Você tem certeza que deseja redefinir a senha?<br/><br/>
             
-            <a class="link-redefinicao" href="../redefinir_senha.php?id=<?php echo $_REQUEST['id']?>&cd=<?php echo $_REQUEST['cd']?>">Sim, redefina por favor.</a>
+            <a class="link-redefinicao" href="../redefinir_senha?id=<?php echo $_REQUEST['id']?>&cd=<?php echo $_REQUEST['cd']?>">Sim, redefina por favor.</a>
         </div>
     </section>
   </body>

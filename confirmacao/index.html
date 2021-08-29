@@ -39,7 +39,13 @@
             Olá!<br/><br/>
             Você tem certeza que deseja redefinir a senha?<br/><br/>
             
-            <a class="link-redefinicao" href="../redefinir_senha?id=<?php echo $_REQUEST['id']?>&cd=<?php echo $_REQUEST['cd']?>">Sim, redefina por favor.</a>
+
+            <form action='../redefinir_senha/' method="get">
+              <input type='hidden' name='id' value="<?php echo $_REQUEST['id']?>" />
+              <input type='hidden' name='cd' value="<?php echo $_REQUEST['cd']?>" />
+              <input type='submit' class="link-redefinicao" value='Sim, redefina por favor.'/>
+            </form>
+            
         </div>
     </section>
   </body>

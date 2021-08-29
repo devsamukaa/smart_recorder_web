@@ -59,13 +59,13 @@ function redefinePassword() {
             if($redefinir_password_response->{'status'} == 0){  
                 return $redefinir_password_response;
             }else{
-                die("<script>alert(Ocorreu um erro ao alterar a senha)</script>");
+                echo("<script>alert('Ocorreu um erro ao alterar a senha 1')</script>");
             }
         }else{
-            die("<script>alert(Ocorreu um erro ao alterar a senha)</script>");
+            echo("<script>alert('Ocorreu um erro ao alterar a senha 2')</script>");
         }
         }else{
-            die("<script>alert(Ocorreu um erro ao alterar a senha)</script>");
+            echo("<script>alert('Ocorreu um erro ao alterar a senha 3')</script>");
         } 
     }
 }

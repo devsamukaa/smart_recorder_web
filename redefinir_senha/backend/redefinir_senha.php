@@ -28,10 +28,6 @@ function redefinePassword() {
     // $BODY_REQUEST =  "{'cd' : ".$_REQUEST["cd"].", 'id' : '".$_REQUEST["id"]."', 'password' : '".sha1($senha_gerada)."'}";
     $URL = 'https://smartrecorder-api.herokuapp.com/pessoa/redefinir_senha';
 
-    echo json_encode($BODY_REQUEST)."<br/>";
-    echo $senha_gerada."<br/>";
-    echo sha1($senha_gerada)."<br/>";
-
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
@@ -61,7 +57,6 @@ function redefinePassword() {
         
     } else {
         
-        echo $response."<br/>";
         $redefinir_password_response = json_decode($response);
         $redefinir_password_response->{'senha'} = $senha_gerada;
 
@@ -70,13 +65,13 @@ function redefinePassword() {
             if($redefinir_password_response->{'status'} == 0){  
                 return $redefinir_password_response;
             }else{
-                echo("<script>alert('Ocorreu um erro ao alterar a senha 1')</script>");
+                die("<script>alert('Ocorreu um erro ao alterar a senha')</script>");
             }
         }else{
-            echo("<script>alert('Ocorreu um erro ao alterar a senha 2')</script>");
+            die("<script>alert('Ocorreu um erro ao alterar a senha')</script>");
         }
         }else{
-            echo("<script>alert('Ocorreu um erro ao alterar a senha 3')</script>");
+            die("<script>alert('Ocorreu um erro ao alterar a senha')</script>");
         } 
     }
 }

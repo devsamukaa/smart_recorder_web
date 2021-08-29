@@ -4,7 +4,7 @@
   
     /* Habilita a exibição de erros */
     ini_set("display_errors", 1);
-    
+
     include "backend/redefinir_senha.php";
 	  turnPageToHttps();
 
@@ -38,8 +38,8 @@
     <section class="container-redefinir-senha">
         <div class="box-redefinir-senha">
             <img class="logo-gotech" src="assets/img/logo-gotech.png"/><br/><br/>
-            Olá <b><?php $response->{'nome'}?></b>,<br/><br/>
-            Sua senha foi redefinida para <b><?php $response->{'senha'}?></b><br/><br/>
+            Olá <b><?php echo $response->{'nome'}?></b>,<br/><br/>
+            Sua senha foi redefinida para <b><?php echo $response->{'senha'}?></b><br/><br/>
             Agora você já pode voltar ao app e ter o controle do seu consumo de energia na palma da sua mão. 😉<br/><br/>
             Conte conosco!<br/><br/>
             Abraços,<br/>

@@ -5,7 +5,7 @@
     /* Habilita a exibição de erros */
     ini_set("display_errors", 1);
 
-    include "backend/redefinir_senha.php";
+    include "../backend/redefinir_senha.php";
 	  turnPageToHttps();
 
     $response = redefinePassword();
@@ -30,17 +30,17 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/redenir_senha.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/redenir_senha.css" />
   </head>
 
   <body ga-ev-label="login_popup">
     <section class="container-redefinir-senha">
         <div class="box-redefinir-senha">
-            <img class="logo-gotech" src="assets/img/logo-gotech.png"/><br/><br/>
+            <img class="logo-gotech" src="../assets/img/logo-gotech.png"/><br/><br/>
             Olá <b><?php echo $response->{'nome'}?></b>,<br/><br/>
             Sua senha foi redefinida para <b><?php echo $response->{'senha'}?></b><br/><br/>
-            Agora você já pode voltar ao app e ter o controle do seu consumo de energia na palma da sua mão. 😉<br/><br/>
+            Agora você já pode voltar ao app e ter o controle do consumo de energia na palma da sua mão. 😉<br/><br/>
             Conte conosco!<br/><br/>
             Abraços,<br/>
             Time GoTech

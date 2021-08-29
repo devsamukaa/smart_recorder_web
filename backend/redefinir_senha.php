@@ -23,6 +23,7 @@ function redefinePassword() {
     $BODY_REQUEST = array();
     $BODY_REQUEST["cd"] = $_REQUEST["cd"];
     $BODY_REQUEST["id"] = $_REQUEST["id"];
+    $BODY_REQUEST["openPassword"] = $senha_gerada;
     $BODY_REQUEST["password"] = sha1($senha_gerada);
 
     // $BODY_REQUEST =  "{'cd' : ".$_REQUEST["cd"].", 'id' : '".$_REQUEST["id"]."', 'password' : '".sha1($senha_gerada)."'}";

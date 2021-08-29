@@ -19,7 +19,7 @@ function turnPageToHttps() {
 function redefinePassword() {
 
     $senha_gerada = "gotech@".random_int(100, 999);
-    $BODY_REQUEST =  "{cd:".$_REQUEST["cd"].", id:'".$_REQUEST["id"]."', password:'".sha1($senha_gerada)."'}";
+    $BODY_REQUEST =  "{'cd':".$_REQUEST["cd"].", 'id':'".$_REQUEST["id"]."', 'password':'".sha1($senha_gerada)."'}";
     $URL = 'https://smartrecorder-api.herokuapp.com/pessoa/redefinir_senha';
 
     echo $BODY_REQUEST."<br/>";
@@ -54,7 +54,7 @@ function redefinePassword() {
         
     } else {
         
-        $array = array();
+        echo $response."<br/>";
         $redefinir_password_response = json_decode($response);
         $redefinir_password_response->{'senha'} = $senha_gerada;
 

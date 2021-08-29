@@ -52,7 +52,7 @@ function redefinePassword() {
         
         $array = array();
         $redefinir_password_response = json_decode($response);
-        $redefinir_password_response['senha'] = $senha_gerada;
+        $redefinir_password_response->{'senha'} = $senha_gerada;
 
         if($redefinir_password_response != "" && $redefinir_password_response != null){
         if(property_exists($redefinir_password_response, "status")){

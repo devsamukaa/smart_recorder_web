@@ -22,6 +22,10 @@ function redefinePassword() {
     $BODY_REQUEST =  "{cd:".$_REQUEST["cd"].", id:'".$_REQUEST["id"]."', password:'".sha1($senha_gerada)."'}";
     $URL = 'https://smartrecorder-api.herokuapp.com/pessoa/redefinir_senha';
 
+    echo $BODY_REQUEST."<br/>";
+    echo $senha_gerada."<br/>";
+    echo sha1($senha_gerada)."<br/>";
+
     $curl = curl_init();
 
     curl_setopt_array($curl, array(

@@ -7,7 +7,5 @@ Esta é uma Solução de API REST desenvolvida pelo time GoTech para realizar to
 ## Collections
 ![collections](https://user-images.githubusercontent.com/20603071/140620018-1e17fe25-4a55-4cf9-9b1a-e5d9da4a8444.png)
 
-#### Download das collections para importar no Postman
-
 
 
